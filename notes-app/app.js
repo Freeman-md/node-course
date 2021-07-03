@@ -4,4 +4,4 @@ const getNotes = require('./notes')
 
 const msg = getNotes()
 
-console.log(chalk.underline.blue.bold('Success!'))
+console.log(chalk.bgGreen('Success!'))
