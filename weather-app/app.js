@@ -1,11 +1,8 @@
-console.log('starting')
+const request = require('request')
 
-setTimeout(() => {
-  console.log('2 Second Timer')
-}, 2000)
+const url = 'https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=fceea1ad480ddb891cfca3288ae6242d'
 
-setTimeout(() => {
-  console.log('0 Second Timer')
-}, 0)
-
-console.log('stopping')
+request({ url: url }, (error, response) => {
+  const data = JSON.parse(response.body)
+  console.log(data.main)
+})
